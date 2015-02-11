@@ -1,0 +1,10 @@
+---
+layout: post
+title: WATCH
+---
+
+# 定期的に実行したものを表示したい
+```bash
+watch "ps aux | grep apache2"
+```
+止めるときはCtrl^c
