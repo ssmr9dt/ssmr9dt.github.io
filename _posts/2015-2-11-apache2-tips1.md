@@ -3,7 +3,7 @@ layout: post
 title: Apache2 tips1
 ---
 
-# settings
+## ドメイン、サブドメインを設定
 
 ```bash
 NameVirtualHost *:80
