@@ -3,6 +3,7 @@ layout: post
 title: Apache2 tips1
 ---
 
+'''bash
 <VirtualHost *:80>
     ServerName example.nya-tex.net
     #...（省略）...
@@ -18,3 +19,4 @@ NameVirtualHost *:80
     ServerName nya-tex.net
     #...（省略）...
 </VirtualHost>
+'''
