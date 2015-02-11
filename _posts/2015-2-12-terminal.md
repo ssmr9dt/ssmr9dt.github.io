@@ -7,11 +7,13 @@ title: Terminal
 ```bash
 root@nya-tex.net:/$
 ```
+
 ↓
 
 ```bash
 ^C+r
 ```
+
 ↓
 
 ```bash
@@ -22,7 +24,9 @@ root@nya-tex.net:/$
 ```bash
 root@nya-tex.net:/$!cd /etc/apa
 ```
+
 ↓
+
 ```bash
 root@nya-tex.net:/etc/apache2$
 ```
