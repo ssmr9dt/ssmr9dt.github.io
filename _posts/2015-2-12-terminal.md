@@ -8,10 +8,12 @@ title: Terminal
 root@nya-tex.net:/$
 ```
 ↓
+
 ```bash
 ^C+r
 ```
 ↓
+
 ```bash
 (reverse-i-search)`cd /etc/apa': cd /etc/apache2/
 ```
