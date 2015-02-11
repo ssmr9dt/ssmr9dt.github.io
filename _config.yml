@@ -3,10 +3,12 @@
 #
 
 # Name of your site (displayed in the header)
-name: Your Name
+name: nya-tex
 
 # Short bio or description (displayed in the header)
 description: Web Developer from Somewhere
+
+#reference: http://plus.appgiga.jp/masatolan/2015/01/13/55047/
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
@@ -21,12 +23,12 @@ footer-links:
   email: 
   facebook: 
   flickr: 
-  github: barryclark/jekyll-now
+  github: ssmr9dt/ssmr9dt.github.io
   instagram: 
   linkedin: 
   pinterest: 
   rss: # just type anything here for a working RSS icon, make sure you set the "url" above!
-  twitter: jekyllrb
+  twitter: QSMurakami
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
 
 # Your disqus shortname, entering this will enable commenting on posts
