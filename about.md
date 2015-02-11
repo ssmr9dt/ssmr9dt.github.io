@@ -4,5 +4,5 @@ title: About
 permalink: /about/
 ---
 
-# Contact me
+## Contact me
 twitter: @QSMurakami
