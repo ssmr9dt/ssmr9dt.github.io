@@ -1,0 +1,13 @@
+---
+layout: post
+title: AWK
+---
+
+# ログなどで、IPを抽出するさいによく使います。
+```bash
+awk '{print $1}' access.log | uniq -c | sort
+```
+
+```bash
+cut -d" " -f1 access.log | uniq -c | sort
+```
