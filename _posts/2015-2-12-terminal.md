@@ -26,4 +26,5 @@ root@nya-tex.net:/$!cd /etc/apa
 ```
 
 ↓
+
 root@nya-tex.net:/etc/apache2$
