@@ -4,7 +4,7 @@ title: VIMRC
 permalink: /vimrc/
 ---
 
-```vimrc
+```bash
 set tabstop=4
 set shiftwidth=4
 set shiftround
