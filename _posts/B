@@ -1,0 +1,21 @@
+Node.jsというのをご存知ですか？
+サーバサイドで動くJavascriptです。
+
+Javascriptというのは、ブラウザで見ている物の中で構成されている一つのスクリプト言語で主にHTML, CSS, Javascriptで構成されています。（他にもあるとは思いますが。）
+ブラウザはその記述されているスクリプト（HTML,CSS,Javascript）をダウンロードしてきて理解し表示しているに過ぎません。
+
+その中のJavascriptをダウンロードじゃなく配信する側（サーバサイド）で動かそうというのがNode.jsです。
+
+
+Node.jsでServerステータスを表示するようにしてみました。
+<img alt="ss.gif" src="http://fumufumu.q-games.com/archives/ss.gif" width="520" height="277" />
+
+今回作ったものはブラウザから見れるようになってまして、リアルタイムに情報が更新される様になっています。
+
+
+以上、IT担当の記事でした。
+なんだかサーバのHDDが悲鳴を上げているようなのでこれで。
+
+作り方も記事にしているので、機会があればポストしようと思います。では。
+
+<img alt="ss2.png" src="http://fumufumu.q-games.com/archives/ss2.png" width="520" height="287" />
