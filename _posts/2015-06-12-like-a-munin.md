@@ -37,12 +37,12 @@ service mm
   wait            = no
   only_from       = 127.0.0.1 192.168.1.0/24
   user            = root
-  server          = /usr/local/bin/munin-murakami
+  server          = /usr/local/bin/mm
   log_on_failure  += USERID
 }
 ```
 
-## follow-up!
+## follow-up work?
 ```
 $ telnet localhost 4950
 Trying 127.0.0.1...
