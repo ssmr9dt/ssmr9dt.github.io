@@ -3,7 +3,9 @@ layout: page
 title: VIMRC
 permalink: /vimrc/
 ---
+
 いいの見つけた！ -> http://vim-bootstrap.com/
+
 ```bash
 set tabstop=4
 set shiftwidth=4
