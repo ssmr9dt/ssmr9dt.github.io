@@ -20,27 +20,8 @@ echo "#"
 #if [ $# -eq 0 -o $arg1 = "cpu" ]; then
   echo "cpu `ps aux | awk '{total = total + $3} END{print total}'`"
 #fi
-
-#if [ $# -eq 0 -o $arg1 = "memory" ]; then
-  echo "memory `free | awk '/buffers\/cache/{print $3/($3+$4)*100}'`"
-#fi
-
-#if [ $# -eq 0 -o $arg1 = "disk" ]; then
-  echo "hdd `df --portability | awk '/md0/{print $3/($3+$4)*100}'`"
-#fi
-
-
-#if [ $arg1 = "disk" ]; then
-#       df --portability | tr -d "%" | awk '{print $1,$5}'
-#fi
-#
-#if [ $arg1 = "cpu" ]; then
-#       echo "us `vmstat 1 2 | tail -n1 | tr -s " " | cut -d" " -f14,15 | sed -e "s/ /+/" | tail -n1 | bc`"
-#fi
-#
-#if [ $arg1 = "memory" ]; then
-#       free | grep "buffers/cache" | awk '{printf("free %d\n", $4/($3+$4)*100)}'
-#fi
+echo "memory `free | awk '/buffers\/cache/{print $3/($3+$4)*100}'`"
+echo "hdd `df --portability | awk '/md0/{print $3/($3+$4)*100}'`"
 
 echo "."
 ```
