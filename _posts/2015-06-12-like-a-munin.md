@@ -1,6 +1,6 @@
 ---
 layout: post
-title: munin
+title: munin for xinetd
 ---
 
 ## like a munin
@@ -26,7 +26,7 @@ echo "hdd `df --portability | awk '/md0/{print $3/($3+$4)*100}'`"
 echo "."
 ```
 
-## regist xinetd
+### regist xinetd
 ```
 $ vim /etc/xinetd.d/mm
 service mm
@@ -42,7 +42,7 @@ service mm
 }
 ```
 
-## follow-up work?
+### follow-up work?
 ```
 $ telnet localhost 4950
 Trying 127.0.0.1...
