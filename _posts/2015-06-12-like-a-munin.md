@@ -1,6 +1,6 @@
 ---
 layout: post
-title: nodejs-munin
+title: munin
 ---
 
 ## like a munin
@@ -48,7 +48,7 @@ echo "."
 ## regist xinetd
 ```
 $ vim /etc/xinetd.d/mm
-service munin-murakami
+service mm
 {
   disable         = no
   port            = 4950
