@@ -16,8 +16,7 @@ svg {
 
 <body>
 <svg></svg>	
-	
-	
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.3/d3.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.3/moment-with-locales.min.js"></script>
 <script>
@@ -25,7 +24,7 @@ svg {
 	"use strict";
 	
 	var windowWidht = 960;
-	var windowHeight = 500;
+	var windowHeight = 540;
 	
 				
 	var svg = d3.select("svg");
@@ -40,7 +39,7 @@ svg {
 		.scale(windowWidht/4)	
 		.rotate([0,0,0])	
 		.translate([windowWidht / 2, windowHeight / 2])
-		.clipAngle(180);	
+		.clipAngle(180);
 			
 		
 	var frontPath = d3.geo.path().projection(projection90);
