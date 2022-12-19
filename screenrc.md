@@ -24,3 +24,8 @@ bind -c resize ^] command
 bind -c resize + eval 'resize +1' 'command -c resize'
 bind -c resize - eval 'resize -1' 'command -c resize'
 ```
+
+```bash
+#!/bin/bash
+ssh -R 80:localhost:2000 serveo.net
+```
