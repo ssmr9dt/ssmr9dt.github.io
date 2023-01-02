@@ -29,8 +29,12 @@
   </head>
 
   <body id="page-top">
-		<section id="intro" class="bg-image" style="background-image: url(https://mdbcdn.b-cdn.net/img/new/fluid/city/113.jpg);height: 100vh;">
-      <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.8)">
+		<section id="intro" class="bg-image" style="background-image: url(https://mdbcdn.b-cdn.net/img/new/fluid/city/113.jpg);height: 100vh;position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: 50%;">
+      <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.8);position: absolute;top: 0;right: 0;bottom: 0;left: 0;width: 100%;height: 100%;overflow: hidden;background-attachment: fixed;">
         <div class="container d-flex align-items-center text-center h-100">
           <div>
             <h1 class="mb-5">{{ site.name }}</h1>
