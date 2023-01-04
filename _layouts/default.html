@@ -40,18 +40,16 @@
           <div class="row">
             <div class="col-md-12">
               <ul class="nav flex-column nav-tabs">
-                <li class="nav-item">
-                  <a class="nav-link active" href="#">Home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="#">Profile</a>
-                </li>
+                <li class="nav-item"><a class="nav-link" href="#screen">.screen</a></li>
+                <li class="nav-item"><a class="nav-link" href="#proxy-ssh">proxy-ssh</a></li>
+                <li class="nav-item"><a class="nav-link" href="#vim">.vim</a></li>
+                <li class="nav-item"><a class="nav-link" href="#tips">Tips</a></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#242943;color:rgb(255,255,255)">
+      <div class="row min-vh-100" style="background-color:#242943;color:rgb(255,255,255)" id="screen">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>
@@ -80,7 +78,7 @@ bind -c resize + eval 'resize +1' 'command -c resize'
 bind -c resize - eval 'resize -1' 'command -c resize'</code></pre>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#19222f;color:rgb(255,255,255)">
+      <div class="row min-vh-100" style="background-color:#19222f;color:rgb(255,255,255)" id="proxy-ssh">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>
@@ -102,7 +100,7 @@ User ec2-user
 ProxyCommand ssh -W %h:%p ssh_server</code></pre>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#2b2643;color:rgb(255,255,255)">
+      <div class="row min-vh-100" style="background-color:#2b2643;color:rgb(255,255,255)" id="vim">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>
@@ -165,7 +163,7 @@ hi perlDATA ctermfg=cyan
 hi perlPOD ctermfg=darkred</code></pre>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#19222f;color:rgb(255,255,255)">
+      <div class="row min-vh-100" style="background-color:#19222f;color:rgb(255,255,255)" id="tips">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>Tips</h1>
