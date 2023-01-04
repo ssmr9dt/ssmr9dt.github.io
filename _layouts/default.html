@@ -28,10 +28,9 @@
     <!-- Created with Jekyll Now - http://github.com/barryclark/jekyll-now -->
   </head>
   <body id="page-top">
-
     <section class="container-fluid">
-      <div class="row" style="height:100vh;">
-        <div class="col-md-8" style="background-color:rgb(36,41,67); color:rgb(255,255,255);align-items: center;display: grid;text-align: center;">
+      <div class="row" style="height:100vh;color:rgb(255,255,255);">
+        <div class="col-md-8" style="background-color:rgb(36,41,67);align-items: center;display: grid;text-align: center;">
           <div class="jumbotron">
             <h1>{{ site.name }}</h1>
             <p>{{ site.description }}</p>
@@ -52,10 +51,10 @@
         <div class="col-md-6">
           <div class="page-header">
             <h1>
-              LayoutIt! <small>Interface Builder for Bootstrap</small>
+              .screen
             </h1>
           </div>
-          <h2>
+          <!-- <h2>
             Heading
           </h2>
           <p>
@@ -63,49 +62,36 @@
           </p>
           <p>
             <a class="btn" href="#">View details »</a>
-          </p>
+          </p> -->
         </div>
         <div class="col-md-6">
           <dl>
             <dt>
-              Description lists
+              Bash
             </dt>
             <dd>
-              A description list is perfect for defining terms.
-            </dd>
-            <dt>
-              Euismod
-            </dt>
-            <dd>
-              Vestibulum id ligula porta felis euismod semper eget lacinia odio sem nec elit.
-            </dd>
-            <dd>
-              Donec id elit non mi porta gravida at eget metus.
-            </dd>
-            <dt>
-              Malesuada porta
-            </dt>
-            <dd>
-              Etiam porta sem malesuada magna mollis euismod.
-            </dd>
-            <dt>
-              Felis euismod semper eget lacinia
-            </dt>
-            <dd>
-              Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus.
+              ```bash
+autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+escape ^Jj
+startup_message off
+vbell off
+caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+bind n screen
+bind h prev
+bind j next
+bind l windowlist
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind -c resize ^] command
+bind -c resize + eval 'resize +1' 'command -c resize'
+bind -c resize - eval 'resize -1' 'command -c resize'
+```
             </dd>
           </dl>
-        </div>
-      </div>
-    </section>
-
-		<section id="intro" class="bg-image" style="background-image: url(https://mdbcdn.b-cdn.net/img/new/fluid/city/113.jpg);height: 100vh;position: relative;overflow: hidden;background-repeat: no-repeat;background-size: cover;background-position: 50%;">
-      <div class="mask text-white" style="background-color: rgba(0, 0, 0, 0.8);position: absolute;top: 0;right: 0;bottom: 0;left: 0;width: 100%;height: 100%;overflow: hidden;background-attachment: fixed;">
-        <div class="container d-flex align-items-center text-center h-100">
-          <div>
-            <h1 class="mb-5">{{ site.name }}</h1>
-            <p>{{ site.description }}</p>
-          </div>
         </div>
       </div>
     </section>
