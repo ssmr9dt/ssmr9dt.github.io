@@ -36,7 +36,7 @@
             <p>{{ site.description }}</p>
           </div>
         </div>
-        <div class="col-md-4 gy-5 bg-color-nav">
+        <article class="col-md-4 gy-5 bg-color-nav">
           <div class="row">
             <div class="col-md-12">
               <ul class="nav flex-column nav-tabs">
@@ -47,7 +47,7 @@
               </ul>
             </div>
           </div>
-        </div>
+        </article>
       </div>
       <div class="row min-vh-100 bg-color-screen" id="screen">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -57,7 +57,7 @@
             </h1>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <article class="col-md-6 d-flex justify-content-center align-items-center">
           <pre class="code bash"><code>autodetach on
 bell_msg "^G"
 defkanji utf-8
@@ -76,7 +76,7 @@ bind r eval 'echo "Resize window"' 'command -c resize'
 bind -c resize ^] command
 bind -c resize + eval 'resize +1' 'command -c resize'
 bind -c resize - eval 'resize -1' 'command -c resize'</code></pre>
-        </div>
+        </article>
       </div>
       <div class="row min-vh-100 bg-color-proxy-ssh" id="proxy-ssh">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -86,7 +86,7 @@ bind -c resize - eval 'resize -1' 'command -c resize'</code></pre>
             </h1>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <article class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="row">
             <div clas="col-12">
               <img src="images/proxy-ssh.png" class="img-fluid" alt="proxy-ssh" />
@@ -104,7 +104,7 @@ User ec2-user
 ProxyCommand ssh -W %h:%p ssh_server</code></pre>
             </div>
           </div>
-        </div>
+        </article>
       </div>
       <div class="row min-vh-100 bg-color-vim" id="vim">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -114,7 +114,7 @@ ProxyCommand ssh -W %h:%p ssh_server</code></pre>
             </h1>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <article class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="row">
             <div class="col-12">
               <p>いいの見つけた！ -> http://vim-bootstrap.com/</p>
@@ -173,7 +173,7 @@ hi perlDATA ctermfg=cyan
 hi perlPOD ctermfg=darkred</code></pre>
             </div>
           </div>
-        </div>
+        </article>
       </div>
       <div class="row min-vh-100 bg-color-tips"id="tips">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
@@ -181,9 +181,9 @@ hi perlPOD ctermfg=darkred</code></pre>
             <h1>Tips</h1>
           </div>
         </div>
-        <div class="col-md-6 d-flex justify-content-center align-items-center">
+        <article class="col-md-6 d-flex justify-content-center align-items-center">
           {{ content }}
-        </div>
+        </article>
       </div>
     </section>
 
