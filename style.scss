@@ -50,9 +50,8 @@ pre code{
 	-khtml-user-select:all !important;
 }
 
-
-.bg-color-home		{ background-color: #192f2a; background-image: url(../images/robot-cat-PhotoRoom.png); background-size: cover; color: rgb(255,255,255); }
 .bg-color-home::before { background: inherit; filter: brightness(0.1); }
+.bg-color-home		{ background-color: #192f2a; background-image: url(../images/robot-cat-PhotoRoom.png); background-size: cover; color: rgb(255,255,255); }
 .bg-color-nav		{ background-color: #2a2f4a; color: rgb(255,255,255); }
 .bg-color-screen	{ background-color: #242943; color: rgb(255,255,255); }
 .bg-color-proxy-ssh	{ background-color: #19222f; color: rgb(255,255,255); }
