@@ -16,6 +16,39 @@ header {
 	background-color: rgb(31, 75, 180);
 }
 
+/*ソースコード用*/
+.code{ 
+	position:relative;
+	margin-left: 0px;
+	padding:30px 0 10px 20px;
+	border-left: solid 10px #fb8a8a;
+	background:#2F3437;
+	list-style:none;
+	color: #fff;
+	font-size:1em;
+	overflow: auto;
+}
+.code.css:after{content: 'CSS'; background: #e382a2;}
+.code.html:after{content: 'HTML'; background: #834f3d;}
+.code.js:after{content: 'JS'; background: #ca8004;}
+.code.php:after{content: 'PHP'; background: #5e7e2c;}
+.code.css:after, .code.html:after, .code.js:after, .code.php:after{
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	padding: 5px 10px;
+	line-height: 1;
+	font-size: 0.9em;
+	color: #fff;
+}
+
+pre code{
+	user-select:all !important;
+	-moz-user-select:all !important;
+	-webkit-user-select:all !important;
+	-khtml-user-select:all !important;
+}
+
 // // Misc.
 // $misc: (
 // 	z-index-base:		10000
