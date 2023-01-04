@@ -78,7 +78,7 @@ bind -c resize + eval 'resize +1' 'command -c resize'
 bind -c resize - eval 'resize -1' 'command -c resize'</code></pre>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#19222f;color:rgb(255,255,255)" id="proxy-ssh">
+      <div class="row min-vh-100 bg-color-proxy-ssh" id="proxy-ssh">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>
@@ -87,7 +87,7 @@ bind -c resize - eval 'resize -1' 'command -c resize'</code></pre>
           </div>
         </div>
         <div class="col-md-6 d-flex justify-content-center align-items-center">
-          <img src="images/proxy-ssh.png" class=""img-fluid" alt="proxy-ssh" />
+          <img src="images/proxy-ssh.png" class="img-fluid" alt="proxy-ssh" />
           <pre class="code bash"><code>Host ssh_server
 Hostname xxx.xxx.xxx.xxx
 Port 9222
@@ -100,7 +100,7 @@ User ec2-user
 ProxyCommand ssh -W %h:%p ssh_server</code></pre>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#2b2643;color:rgb(255,255,255)" id="vim">
+      <div class="row min-vh-100 bg-color-vim" id="vim">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>
@@ -163,7 +163,7 @@ hi perlDATA ctermfg=cyan
 hi perlPOD ctermfg=darkred</code></pre>
         </div>
       </div>
-      <div class="row min-vh-100" style="background-color:#19222f;color:rgb(255,255,255)" id="tips">
+      <div class="row min-vh-100 bg-color-tips"id="tips">
         <div class="col-md-6 d-flex justify-content-center align-items-center">
           <div class="page-header">
             <h1>Tips</h1>
