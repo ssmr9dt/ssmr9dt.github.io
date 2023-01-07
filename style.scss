@@ -51,12 +51,20 @@ pre code{
 }
 
 .bg-color-home::before { background: inherit; filter: brightness(0.1); }
-.bg-color-home		{ background-color: #192f2a; background-image: url(../images/robot-cat-PhotoRoom.png); background-size: contain; color: rgb(255,255,255); }
-.bg-color-nav		{ background-color: #2a2f4a; color: rgb(255,255,255); }
-.bg-color-screen	{ background-color: #242943; color: rgb(255,255,255); }
-.bg-color-proxy-ssh	{ background-color: #19222f; color: rgb(255,255,255); }
-.bg-color-vim		{ background-color: #2b2643; color: rgb(255,255,255); }
-.bg-color-tips		{ background-color: #19222f; color: rgb(255,255,255); }
+// .bg-color-home		{ background-color: #192f2a; background-image: url(../images/robot-cat-PhotoRoom.png); background-size: contain; color: rgb(255,255,255); }
+// .bg-color-nav		{ background-color: #2a2f4a; color: rgb(255,255,255); }
+// .bg-color-screen	{ background-color: #242943; color: rgb(255,255,255); }
+// .bg-color-proxy-ssh	{ background-color: #19222f; color: rgb(255,255,255); }
+// .bg-color-vim		{ background-color: #2b2643; color: rgb(255,255,255); }
+// .bg-color-tips		{ background-color: #19222f; color: rgb(255,255,255); }
+
+.bg-color-home		{ background-color: #C6E0B9; color: rgb(255,255,255); }
+.bg-color-nav		{ background-color: #1e460d; color: rgb(255,255,255); }
+.bg-color-screen	{ background-color: #9DD386; color: rgb(255,255,255); }
+.bg-color-proxy-ssh	{ background-color: #427832; color: rgb(255,255,255); }
+.bg-color-vim		{ background-color: #405A29; color: rgb(255,255,255); }
+.bg-color-tips		{ background-color: #1e460d; color: rgb(255,255,255); }
+
 
 .bg-color-gradation1 { background-color: #C6E0B9; }
 .bg-color-gradation2 { background-color: #9DD386; }
