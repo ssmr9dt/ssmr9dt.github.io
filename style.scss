@@ -33,8 +33,8 @@ header {
 .code.js:after{content: 'JS'; background: #ca8004;}
 .code.php:after{content: 'PHP'; background: #5e7e2c;}
 .code.bash:after{content: 'BASH'; background: #5e7e2c;}
-.highlight {content: "CODE"; background: #5e7e2c;}
-.code.css:after, .code.html:after, .code.js:after, .code.php:after, .code.bash:after, .highlight {
+pre.highlight {content: "CODE"; background: #5e7e2c;}
+.code.css:after, .code.html:after, .code.js:after, .code.php:after, .code.bash:after, pre.highlight {
 	width: 100%;
 	position: absolute;
 	top: 0px;
