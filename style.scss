@@ -34,13 +34,14 @@ header {
 .code.php:after{content: 'PHP'; background: #5e7e2c;}
 .code.bash:after{content: 'BASH'; background: #5e7e2c;}
 .code.css:after, .code.html:after, .code.js:after, .code.php:after, .code.bash:after {
+	width: 100%;
 	position: absolute;
 	top: 0px;
 	left: 0px;
 	padding: 5px 10px;
 	line-height: 1;
 	font-size: 0.9em;
-	color: #fff;
+	color: #ffffff;
 }
 
 pre code {
