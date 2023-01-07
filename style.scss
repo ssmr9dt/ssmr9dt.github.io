@@ -33,7 +33,7 @@ header {
 .code.js:after{content: 'JS'; background: #ca8004;}
 .code.php:after{content: 'PHP'; background: #5e7e2c;}
 .code.bash:after{content: 'BASH'; background: #5e7e2c;}
-.code.css:after, .code.html:after, .code.js:after, .code.php:after{
+.code.css:after, .code.html:after, .code.js:after, .code.php:after, .code.bash:after {
 	position: absolute;
 	top: 0px;
 	left: 0px;
@@ -43,7 +43,7 @@ header {
 	color: #fff;
 }
 
-pre code{
+pre code {
 	user-select:all !important;
 	-moz-user-select:all !important;
 	-webkit-user-select:all !important;
