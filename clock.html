@@ -23,20 +23,24 @@ svg {
 (function(){
 	"use strict";
 	
-	var windowWidht = 960;
-	var windowHeight = 540;
+	var windowWidht = window.innerWidth;
+	var windowHeight = window.innerHeight;
 	
+	function updateDimensions() {
+		windowWidht = window.innerWidth;
+		windowHeight = window.innerHeight;
+	}
 				
 	var svg = d3.select("svg");
 		 
 	var projection90 = d3.geo.orthographic() 
-		.scale(windowWidht/4)	
+		.scale(Math.min(windowWidht, windowHeight)/4)	
 		.rotate([0,0,0])	
 		.translate([windowWidht / 2, windowHeight / 2])
 		.clipAngle(90);	
 		
 	var projection180 = d3.geo.orthographic() 
-		.scale(windowWidht/4)	
+		.scale(Math.min(windowWidht, windowHeight)/4)	
 		.rotate([0,0,0])	
 		.translate([windowWidht / 2, windowHeight / 2])
 		.clipAngle(180);
@@ -47,90 +51,123 @@ svg {
 			
 		d3.json("https://gist.githubusercontent.com/shimizu/97c156f7f9137586f784/raw/4be1053346fa88d448c2290c49689634c8102b0a/Landmasses.geojson", function(geojson){ 
 			
+			var stage, backMap, frontMap, clockGroup, clockRect, clockText;
+			var rotationAngle = 0;
+			var updateFunction;
 			
-			/*************************************************************
-			 * 地球儀表示
-			 *************************************************************/	
-			var stage = svg.append("svg:g"); 
-			
-			//ステージを右23.4度傾ける
-			stage.attr("transform", "rotate(23.4, "+windowWidht/2+",  "+windowHeight/2+")") ;
-	
-			//地形(裏)
-			var backMap = stage.append("svg:path")
-				.attr({
-				"d":function(){ return backPath(geojson)},
-					"fill-opacity":1,
-					"fill":"#EDE9F1",
-					"stroke":"none",
-				});
-	
-			//地形(表)
-			var frontMap = stage.append("svg:path")
-				.attr({
-				"d":function(){ return frontPath(geojson)},
-					"fill-opacity":1,
-					"fill":"#FD81DB",
-					"stroke":"none",
-				});
+			function initializeVisualization() {
+				// SVGをクリア
+				svg.selectAll("*").remove();
 				
-	 
-			//地形を回転させる
-			var update = function(){
-				var i = 0;
-				return function(){
-					i = i+0.2;
-					projection90.rotate([i,0,0]);  
-					projection180.rotate([i,0,0]);  
-	
-					frontPath = d3.geo.path().projection(projection90);
-					backPath = d3.geo.path().projection(projection180);
-	
-					backMap.attr("d", backPath(geojson)); 
-					frontMap.attr("d", frontPath(geojson)); 
+				/*************************************************************
+				 * 地球儀表示
+				 *************************************************************/	
+				stage = svg.append("svg:g"); 
+				
+				//ステージを右23.4度傾ける
+				stage.attr("transform", "rotate(23.4, "+windowWidht/2+",  "+windowHeight/2+")") ;
+		
+				//地形(裏)
+				backMap = stage.append("svg:path")
+					.attr({
+					"d":function(){ return backPath(geojson)},
+						"fill-opacity":1,
+						"fill":"#EDE9F1",
+						"stroke":"none",
+					});
+		
+				//地形(表)
+				frontMap = stage.append("svg:path")
+					.attr({
+					"d":function(){ return frontPath(geojson)},
+						"fill-opacity":1,
+						"fill":"#FD81DB",
+						"stroke":"none",
+					});
 					
-				}
-			}		
-			setInterval(update(), 100); 
-			
-			
-			/*************************************************************
-			 * 時計表示
-			 *************************************************************/
-			var marginLeft = windowWidht/8;
-			var marginTop = windowHeight/3 + windowHeight/6;
-			var textY = 10;
-			
-			
-			var clockGroup = svg.append("g")
-				.attr("transform", "translate("+[marginLeft, marginTop]+")") ;
-			
-			//テキスト背景描画
-			var clockRect = clockGroup.append("rect")
-				.attr({
-					"width":"100%",
-					"height":windowWidht/10,
-					"fill":"EDE9F1",
-					"fill-opacity": 0.2
-				})
-			
-			//テキスト描画
-			var clockText = clockGroup.append("text")
-				.attr({
-					"x":"10",
-					"y":windowWidht/11,
-					"font-size": 110,
-					"font-weight":"bold",
-					"font-family":"arial",
-					"line-height": 1.5,
-					"letter-spacing": 5,
-					"word-spacing": 5
-				});
+		 
+				//地形を回転させる
+				updateFunction = function(){
+					return function(){
+						rotationAngle = rotationAngle+0.2;
+						projection90.rotate([rotationAngle,0,0]);  
+						projection180.rotate([rotationAngle,0,0]);  
+		
+						frontPath = d3.geo.path().projection(projection90);
+						backPath = d3.geo.path().projection(projection180);
+		
+						backMap.attr("d", backPath(geojson)); 
+						frontMap.attr("d", frontPath(geojson)); 
+						
+					}
+				}		
 				
+				/*************************************************************
+				 * 時計表示
+				 *************************************************************/
+				var marginLeft = windowWidht/8;
+				var marginTop = windowHeight/3 + windowHeight/6;
+				var fontSize = Math.min(windowWidht, windowHeight) / 10;
+				
+				clockGroup = svg.append("g")
+					.attr("transform", "translate("+[marginLeft, marginTop]+")") ;
+				
+				//テキスト背景描画
+				clockRect = clockGroup.append("rect")
+					.attr({
+						"width": windowWidht * 0.75,
+						"height": fontSize * 1.2,
+						"fill":"EDE9F1",
+						"fill-opacity": 0.2
+					})
+				
+				//テキスト描画
+				clockText = clockGroup.append("text")
+					.attr({
+						"x":"10",
+						"y": fontSize,
+						"font-size": fontSize,
+						"font-weight":"bold",
+						"font-family":"arial",
+						"line-height": 1.5,
+						"letter-spacing": 5,
+						"word-spacing": 5
+					});
+			}
+			
+			function updateVisualization() {
+				updateDimensions();
+				
+				// プロジェクションを更新
+				projection90
+					.scale(Math.min(windowWidht, windowHeight)/4)
+					.translate([windowWidht / 2, windowHeight / 2]);
+				
+				projection180
+					.scale(Math.min(windowWidht, windowHeight)/4)
+					.translate([windowWidht / 2, windowHeight / 2]);
+				
+				frontPath = d3.geo.path().projection(projection90);
+				backPath = d3.geo.path().projection(projection180);
+				
+				initializeVisualization();
+			}
+			
+			// 初期化
+			initializeVisualization();
+			
+			// 回転アニメーション開始
+			setInterval(updateFunction(), 100);
+			
 			//テキスト更新
 			setInterval(function(){
-				clockText.text(moment().format('H:mm:ss:SS'));	
-			}, 1)
+				if (clockText) {
+					clockText.text(moment().format('H:mm:ss:SS'));	
+				}
+			}, 1);
+			
+			// ウィンドウサイズ変更時の処理
+			window.addEventListener('resize', updateVisualization);
 	});
 
 })();
