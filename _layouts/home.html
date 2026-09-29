@@ -9,7 +9,7 @@ layout: default
     <a class="hero-link" href="#tips">記事を読む <span aria-hidden="true">↗</span></a>
   </div>
   <div class="terminal-card">
-    <div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>.screenrc</span></div>
+    <div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><select class="terminal-select" aria-label="コピーする設定"><option value="screen">.screenrc</option><option value="vim">.vimrc</option><option value="proxy-ssh">proxy-ssh</option></select></div>
     <pre tabindex="0" aria-label="screenrc の抜粋"><code>autodetach on
 bell_msg "^G"
 defkanji utf-8
@@ -18,6 +18,7 @@ encoding utf-8 utf-8
 defscrollback 10000
 escape ^Jj
 startup_message off</code></pre>
+    <span class="terminal-status" role="status" aria-live="polite"></span>
   </div>
 </section>
 <section class="posts-section" id="tips" aria-labelledby="posts-title">

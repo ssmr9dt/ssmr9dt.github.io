@@ -126,4 +126,10 @@ pre { overflow-x: auto; max-width: 100%; tab-size: 4; white-space: pre; }
   .footer-inner nav { margin-top: 16px; }
   .site-footer { padding-block: 28px; }
 }
+.terminal-select { background: transparent; color: inherit; border: 0; font: inherit; cursor: pointer; max-width: 65%; }
+.terminal-select option { background: #202c29; color: #dfe8de; }
+.terminal-select:focus-visible { outline: 3px solid #a86b16; outline-offset: 4px; }
+.terminal-card pre[role="button"] { cursor: copy; height: calc(8 * 1.85em + 44px); overflow: auto; }
+.terminal-status { position: absolute; right: 12px; bottom: 4px; max-width: calc(100% - 24px); background: #202c29; color: #dfe8de; font-size: 11px; line-height: 1.5; }
+@media (max-width: 600px) { .terminal-card pre[role="button"] { height: calc(8 * 1.85em + 36px); } }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
