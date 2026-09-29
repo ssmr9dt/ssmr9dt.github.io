@@ -1,0 +1,106 @@
+<section class="config-section" aria-labelledby="config-title">
+  <div class="section-heading"><h2 id="config-title">Config notes</h2><span>設定メモ</span></div>
+  <details class="config-note" id="screen">
+    <summary><span>.screenrc</span><span class="expand-icon" aria-hidden="true">＋</span></summary>
+    <div class="config-body prose">
+      
+      
+      <pre tabindex="0" aria-label=".screenrc のコード"><code>autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+escape ^Jj
+startup_message off
+vbell off
+caption always "%{= wb} %-w%{=bu dr}%n %t%{-}%+w %= %{=b wk} [%l] %{=b wb}%y/%m/%d(%D) %{=b wm}%c"
+bind n screen
+bind h prev
+bind j next
+bind l windowlist
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind -c resize ^] command
+bind -c resize + eval 'resize +1' 'command -c resize'
+bind -c resize - eval 'resize -1' 'command -c resize'</code></pre>
+      <a href="{{ '/screenrc/' | relative_url }}">固定ページを開く <span aria-hidden="true">→</span></a>
+    </div>
+  </details>
+  <details class="config-note" id="proxy-ssh">
+    <summary><span>proxy-ssh</span><span class="expand-icon" aria-hidden="true">＋</span></summary>
+    <div class="config-body prose">
+      <img src="{{ '/images/proxy-ssh.png' | relative_url }}" alt="proxy-ssh" loading="lazy">
+      
+      <pre tabindex="0" aria-label="proxy-ssh のコード"><code>Host ssh_server
+Hostname xxx.xxx.xxx.xxx
+Port 9222
+User ec2-user
+ForwardAgent yes
+Host target_server
+Hostname ddd.ddd.ddd.ddd
+Port 22
+User ec2-user
+ProxyCommand ssh -W %h:%p ssh_server</code></pre>
+      <a href="{{ '/proxy-ssh/' | relative_url }}">固定ページを開く <span aria-hidden="true">→</span></a>
+    </div>
+  </details>
+  <details class="config-note" id="vim">
+    <summary><span>.vimrc</span><span class="expand-icon" aria-hidden="true">＋</span></summary>
+    <div class="config-body prose">
+      
+      <p>いいの見つけた！ -&gt; http://vim-bootstrap.com/</p>
+      <pre tabindex="0" aria-label=".vimrc のコード"><code>set tabstop=4
+set shiftwidth=4
+set shiftround
+"set expandtab
+set autoindent
+set smartindent
+set hlsearch
+set nu
+"set paste
+
+hi Search ctermbg=LightGreen
+nmap :nohlsearch
+
+"if has(‘syntax’) && (&t_Co > 2)
+" syntax on
+"endif
+
+"colorscheme molokai
+syntax on
+
+autocmd BufNewFile,BufRead *.ja set filetype=php
+autocmd BufNewFile,BufRead *.en set filetype=php
+"autocmd BufNewFile,BufRead *.tx setfiletype xslate
+autocmd BufNewFile,BufRead *.html if search(‘^: ‘) > 0 | set filetype=xslate | endif
+
+" todoリストを簡単に入力する
+abbreviate tl – [ ]
+
+" 入れ子のリストを折りたたむ
+"setlocal foldmethod=indent
+
+" todoリストのon/offを切り替える
+nnoremap :call ToggleCheckbox()
+
+function! ToggleCheckbox()
+let l:line = getline(‘.’)
+if l:line =~ ‘\-\s\[\s\]’
+let l:result = substitute(l:line, ‘-\s\[\s\]’, ‘- [x]’, ”)
+call setline(‘.’, l:result)
+elseif l:line =~ ‘\-\s\[x\]’
+let l:result = substitute(l:line, ‘-\s\[x\]’, ‘- [ ]’, ”)
+call setline(‘.’, l:result)
+end
+endfunction
+
+"autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
+
+hi Comment ctermfg=lightblue
+hi perlComment ctermfg=darkgray
+hi perlDATA ctermfg=cyan
+hi perlPOD ctermfg=darkred</code></pre>
+      <a href="{{ '/vimrc/' | relative_url }}">固定ページを開く <span aria-hidden="true">→</span></a>
+    </div>
+  </details>
+</section>

@@ -1,17 +1,13 @@
 ---
 layout: default
 ---
-
-<article class="post">
-  <h1>{{ page.title }}</h1>
-
-  <div class="entry">
-    {{ content }}
-  </div>
-
-  <div class="date">
-    Written on {{ page.date | date: "%B %e, %Y" }}
-  </div>
-
+<article class="document post">
+  <header class="document-header">
+    <a class="back-link" href="{{ '/' | relative_url }}#tips">← 記事一覧</a>
+    <p class="eyebrow"><time datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time></p>
+    <h1>{{ page.title | escape }}</h1>
+  </header>
+  <div class="entry prose">{{ content }}</div>
+  <div class="document-bottom"><a href="{{ '/' | relative_url }}#tips">← 記事一覧に戻る</a></div>
   {% include disqus.html disqus_identifier=page.disqus_identifier %}
 </article>

@@ -1,0 +1,27 @@
+---
+layout: default
+---
+<section class="hero" id="home" aria-labelledby="home-title">
+  <div class="hero-copy">
+    <h1 id="home-title">{{ site.name | escape }}</h1>
+    <p class="eyebrow">{{ site.description | escape }}</p>
+    <div class="short-rule" aria-hidden="true"></div>
+    <a class="hero-link" href="#tips">記事を読む <span aria-hidden="true">↗</span></a>
+  </div>
+  <div class="terminal-card">
+    <div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><span>.screenrc</span></div>
+    <pre tabindex="0" aria-label="screenrc の抜粋"><code>autodetach on
+bell_msg "^G"
+defkanji utf-8
+defencoding utf-8
+encoding utf-8 utf-8
+defscrollback 10000
+escape ^Jj
+startup_message off</code></pre>
+  </div>
+</section>
+<section class="posts-section" id="tips" aria-labelledby="posts-title">
+  <div class="section-heading"><h2 id="posts-title">Latest Posts</h2><span>{{ site.posts | size }} articles</span></div>
+  {{ content }}
+</section>
+{% include home-configs.html %}
