@@ -1,16 +1,20 @@
 ---
 layout: default
 ---
-<section class="hero" id="home" aria-labelledby="home-title">
-  <div class="hero-copy">
-    <h1 id="home-title">{{ site.name | escape }}</h1>
-    <p class="eyebrow">{{ site.description | escape }}</p>
-    <div class="short-rule" aria-hidden="true"></div>
-    <a class="hero-link" href="#tips">記事を読む <span aria-hidden="true">↗</span></a>
+<section class="config-carousel" aria-roledescription="カルーセル" aria-label="設定ファイル" data-carousel>
+  <div class="config-intro">
+    <h1 id="config-heading">.screenrc</h1>
+    <p id="config-description">快適なターミナル環境のための設定ファイル。</p>
   </div>
-  <div class="terminal-card">
-    <div class="terminal-bar"><span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span><select class="terminal-select" aria-label="コピーする設定"><option value="screen">.screenrc</option><option value="vim">.vimrc</option><option value="proxy-ssh">proxy-ssh</option></select></div>
-    <pre tabindex="0" aria-label="screenrc の抜粋"><code>autodetach on
+  <div class="terminal-card" id="config-preview" role="group" aria-roledescription="スライド" aria-label="1 / 3: .screenrc">
+    <div class="terminal-bar">
+      <span class="terminal-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <label class="sr-only" for="config-select">表示する設定</label>
+      <select id="config-select" class="terminal-select" disabled><option value="screen">.screenrc</option><option value="proxy-ssh">proxy-ssh</option><option value="vim">.vimrc</option></select>
+      <span class="terminal-encoding">UTF-8</span>
+      <button class="copy-config" type="button" hidden>全文コピー</button>
+    </div>
+    <pre tabindex="0" aria-label=".screenrc の抜粋"><code>autodetach on
 bell_msg "^G"
 defkanji utf-8
 defencoding utf-8
@@ -18,8 +22,18 @@ encoding utf-8 utf-8
 defscrollback 10000
 escape ^Jj
 startup_message off</code></pre>
-    <span class="terminal-status" role="status" aria-live="polite"></span>
   </div>
+  <div class="carousel-controls" hidden>
+    <button type="button" class="carousel-arrow" data-direction="-1" aria-label="前の設定" aria-controls="config-preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m14 5-7 7 7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+    <div class="carousel-dots" role="group" aria-label="表示する設定">
+      <button type="button" data-config="screen" aria-label=".screenrc を表示" aria-current="true" aria-controls="config-preview"><span></span></button>
+      <button type="button" data-config="proxy-ssh" aria-label="proxy-ssh を表示" aria-controls="config-preview"><span></span></button>
+      <button type="button" data-config="vim" aria-label=".vimrc を表示" aria-controls="config-preview"><span></span></button>
+    </div>
+    <button type="button" class="carousel-arrow" data-direction="1" aria-label="次の設定" aria-controls="config-preview"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m10 5 7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+  </div>
+  <p class="terminal-status" role="status" aria-live="polite" aria-atomic="true"></p>
+  <noscript><p>設定全文は、このページ下部の「Config notes」で確認できます。</p></noscript>
 </section>
 <section class="posts-section" id="tips" aria-labelledby="posts-title">
   <div class="section-heading"><h2 id="posts-title">Latest Posts</h2><span>{{ site.posts | size }} articles</span></div>

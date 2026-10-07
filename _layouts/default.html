@@ -3,18 +3,19 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#143d31">
+  <meta name="theme-color" content="#101518">
   <title>{% if page.title %}{{ page.title | escape }} – {% endif %}{{ site.name | escape }} – {{ site.description | escape }}</title>
   <meta name="author" content="{{ site.name | escape }}">
   <meta name="description" content="{{ site.description | escape }}">
-  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/style.css' | relative_url }}?v=midnight-1">
   <link rel="alternate" type="application/rss+xml" title="{{ site.name | escape }}" href="{{ '/feed.xml' | relative_url }}">
 </head>
 <body id="page-top">
   <a class="skip-link" href="#main">本文へ移動</a>
   <header class="site-header">
     <div class="shell header-inner">
-      <a class="brand" href="{{ '/' | relative_url }}">{{ site.name | escape }}</a>
+      <a class="brand" href="{{ '/' | relative_url }}"><span class="prompt-mark" aria-hidden="true">&gt;</span> {{ site.name | escape }}</a>
+      <span class="header-description">{{ site.description | escape }}</span>
       <nav class="site-nav" aria-label="メインナビゲーション">
         <a href="{{ '/' | relative_url }}#screen">.screenrc</a>
         <a href="{{ '/' | relative_url }}#proxy-ssh">proxy-ssh</a>
@@ -36,7 +37,7 @@
       <a class="back-top" href="#page-top">ページ上部へ ↑</a>
     </div>
   </footer>
-  <script src="{{ '/assets/js/site.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}?v=midnight-1" defer></script>
   {% if jekyll.environment == 'production' %}
   <!-- Existing analytics retained only for production builds. -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41571502-1"></script>
